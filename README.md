@@ -23,12 +23,12 @@ The pipeline automates the **daily ingestion, transformation, and loading** of r
 
 ```mermaid
 flowchart LR
-    A[Source Data (JSON/CSV/API)] -->|Extract| B[Airflow DAG]
-    B -->|Transform| C[Pandas DataFrames]
-    C -->|Load| D[(AWS S3 Bucket)]
-    D -->|COPY Command| E[(Amazon Redshift Staging Table)]
-    E -->|MERGE| F[(Redshift Target Table)]
-    F --> G[PowerBI / Tableau / Analytics]
+    A[Source Data (JSON/CSV/API)] >|Extract| B[Airflow DAG]
+    B >|Transform| C[Pandas DataFrames]
+    C >|Load| D[(AWS S3 Bucket)]
+    D >|COPY Command| E[(Amazon Redshift Staging Table)]
+    E >|MERGE| F[(Redshift Target Table)]
+    F > G[PowerBI / Tableau / Analytics]
 ⚙️ Workflow Features
 ✅ Orchestrated DAGs: Modular Airflow tasks for extract → transform → load.
 ✅ Data Validation: Deduplication and type enforcement via Pandas.
