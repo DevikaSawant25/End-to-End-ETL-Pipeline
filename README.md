@@ -21,8 +21,6 @@ The pipeline automates the **daily ingestion, transformation, and loading** of r
 
 ### 🧩 **Architecture**
 
-```mermaid
-flowchart LR
     A[Source Data (JSON/CSV/API)] >|Extract| B[Airflow DAG]
     B >|Transform| C[Pandas DataFrames]
     C >|Load| D[(AWS S3 Bucket)]
